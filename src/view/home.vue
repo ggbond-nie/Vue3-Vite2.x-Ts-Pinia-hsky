@@ -1,4 +1,8 @@
 <template lang="pug">
+n-button Default
+n-button(type='tertiary')
+    | Tertiary
+n-button(type='info') 我是你爸爸
 div 我是大哥
 div {{ store.count2 }}
 div {{ store.count3 }}
