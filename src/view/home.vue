@@ -10,10 +10,20 @@ button(@click='store.count++')
     | {{ store.count }}
 br
 TestPinia
+n-button(@click='getList') 我是 ggbond
 </template>
 <script lang="ts" setup>
+import { inxGeneral } from '../api/index'
 import { mainStore } from '../store/index'
 import TestPinia from './testpinia.vue'
 const store = mainStore()
-console.log(store.count, 11)
+const getList = async () => {
+    const params = {
+        module_id: 'AHINDUSTRY0027',
+        size: 10000000,
+        rule_id: 'AHGCJ0491',
+    }
+    const res = await inxGeneral(params)
+    console.log(res)
+}
 </script>
